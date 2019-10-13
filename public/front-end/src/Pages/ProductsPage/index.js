@@ -5,16 +5,29 @@ import Products from "../../components/Products/index";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetchProducts().then(response => {
       setProducts(response.data);
-    }).catch(error => console.log(error));
-  }, [products]);
+      setLoading(false);
+    }).catch(error => {
+      console.log(error);
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <div className="products-page">
-      <h3 className="products-page__heading">Products Page</h3>
-      <Products products={products} />
+      <div className="products-page__container">
+        <h3 className="products-page__heading">Ascii Faces</h3>
+        { loading ? <div className="loader">
+          Loading...
+        </div> : null}
+        <Products products={products} />
+      </div>
+      
     </div>
   );
 };
