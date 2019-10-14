@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./index.scss"
 import { fetchProducts } from "../../api/index";
 import Products from "../../components/Products/index";
+import Loader from "../../components/Loader/index";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -22,9 +23,7 @@ const ProductsPage = () => {
     <div className="products-page">
       <div className="products-page__container">
         <h3 className="products-page__heading">Ascii Faces</h3>
-        { loading ? <div className="loader">
-          Loading...
-        </div> : null}
+        { loading ? <Loader /> : null}
         <Products products={products} />
       </div>
       
