@@ -31,7 +31,7 @@ const ProductsPage = () => {
   return (
     <div className="products-page">
       <h3 className="products-page__heading">Ascii Faces</h3>
-         <p class="text-center products-page__sub-heading">Buy the best and the Cheapest ascii faces in the market.</p>
+         <p className="text-center products-page__sub-heading">Buy the best and the Cheapest ascii faces in the market.</p>
       <div className="products-page__container">
         <div className="products-page__filters">
           <h3 className="products-page__filters-heading">Sort By</h3>
@@ -64,7 +64,7 @@ const ProductsPage = () => {
         <div className="products-page__ad">
           <div className="products-page__ad-container">
             <div className="products-page__ad-group">
-            <img class="ad" src={`/ads/?r=${Math.floor(Math.random()*1000)}`} />
+            <img className="ad" src={`/ads/?r=${Math.floor(Math.random()*1000)}`} />
             { products.length > 0 ? <p>But first, a word from our sponsors</p> : null }
             </div>
           </div>
