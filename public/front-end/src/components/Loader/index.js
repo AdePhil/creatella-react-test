@@ -18,7 +18,7 @@ const Loader = (props) => {
   });
   
   return (
-    <div className="loader">
+    <div>
       {loadingText}
     </div>
   );
