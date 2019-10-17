@@ -9,7 +9,6 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState('');
-  const [reset, setReset] = useState(false);
 
   useEffect(() => {
     getProducts({page, sortBy});
@@ -28,7 +27,6 @@ const ProductsPage = () => {
     setProducts([]);
     setSortBy(e.target.value);
     setPage(1);
-    setReset(true)
   }
 
   const resetFilters = () => {

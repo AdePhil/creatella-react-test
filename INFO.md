@@ -6,8 +6,8 @@
 
 ### Run the frontend
 
-- Navigate to public/front-end from the root folder. Run npm run start or yarn start.
-- The app starts at http://localhost:8000/ and be viewed on the browser.
+- Navigate to public/front-end from the root folder. Run npm run start or yarn start. Because the front-end and the server runs on at http://localhost:3000/, run the server first and change the port when you run the front-end with npm run start or yarn start. Another option is to create an .env file and set P0RT=8000 or any other number other than 3000.
+- The app starts at the url in the console.
 
 ## Features Implemented
 
