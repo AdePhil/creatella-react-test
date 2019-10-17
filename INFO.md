@@ -6,7 +6,7 @@
 
 ### Run the frontend
 
-- Navigate to public/front-end from the root folder. Run npm run start or yarn start in the root folder.
+- Navigate to public/front-end from the root folder. Run npm run start or yarn start.
 - The app starts at http://localhost:8000/ and be viewed on the browser.
 
 ## Features Implemented
@@ -21,7 +21,11 @@
 - This text "~ end of catalogue ~" is shown at the end of page if there are no more products that can be fetched.
 - After every 20 products fetched randomly generate image of an ad is displayed.
 
-## Featured not Implemented
+## Features not Implemented
 
 - Pre-emptively fetch the next batch of products to be displayed
   - This can be implemented by making two api requests initially, the first to fetch the products to be displayed. The second for the next batch. When it get to the end of the page, the next batch should be displayed and an api request should be made to update the next batch.
+
+## Features Added
+
+- A reset button is added to reset the filters, there by fetching the products without any sort order.
