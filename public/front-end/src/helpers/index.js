@@ -8,6 +8,9 @@ export const dateFormatter = (dateString) => {
   const today = new Date();
   const timeDifference = today.getTime() - dateProductWasAdded.getTime();
   const daysDifference = Math.round(timeDifference / (1000 * 3600 * 24));
+  if(daysDifference === 0) {
+    return `Today`;
+  }
   if(daysDifference > 7 ){
     return defaultDateFormatter(dateString);
   }
