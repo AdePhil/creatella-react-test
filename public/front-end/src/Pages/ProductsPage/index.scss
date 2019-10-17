@@ -15,30 +15,67 @@
   &__sub-heading {
     margin-bottom: 40px;
     padding: 0 20px;
+    max-width: 50%;
+    line-height: 1.8;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    @media (max-width: 1000px) {
+      max-width: 80%;
+    }
+    @media (max-width: 500px) {
+      max-width: 98%;
+    }
   }
   &__container {
     margin: 0 auto;
     padding: 0 30px;
     position: relative;
     display: grid;
-    grid-template-columns: 140px 1fr 200px;
+    grid-template-columns: 140px 1fr 100px;
     grid-gap: 20px;
     max-width: 1150px;
-  }
-  &__ad {
-    position: relative;
-    &-container {
-      position: absolute;
+    @media (max-width: 600px) {
+      grid-template-columns: 140px 1fr;
     }
-    &-group {
-      position: fixed;
-      width: 200px;
-      text-align: center;
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
     }
   }
   &__filters {
     display: flex;
     flex-direction: column;
+    position: relative;
+    @media (max-width: 500px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    &-container {
+      position: absolute;
+      @media (max-width: 500px) {
+        position: relative;
+      }
+    }
+    &-group {
+      position: fixed;
+      z-index: 2;
+      .reset {
+        color: #fff;
+        background-color: #f44e66;
+        border: none;
+        outline: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
+      @media (max-width: 500px) {
+        position: relative;
+      }
+      @media (max-width: 500px) {
+        display: flex;
+      }
+    }
     &-heading {
       margin-top: 0;
     }
@@ -59,6 +96,10 @@
     margin-bottom: 15px;
     cursor: pointer;
     font-size: 14px;
+    @media (max-width: 500px) {
+      margin-left: 10px;
+      margin-top: 5px;
+    }
 
     .control__indicator {
       position: absolute;
