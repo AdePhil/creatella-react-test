@@ -11,22 +11,19 @@ const ProductsPage = () => {
   const [sortBy, setSortBy] = useState('');
 
   useEffect(() => {
-    getProducts({page, sortBy});
-  }, [sortBy]);
+      fetchProducts({page, sortBy}).then(response => {
+        setProducts((products) => [...products, ...response.data]);
+      }).catch(error => {
+        console.log(error);
+      });
+  }, [sortBy, page]);
 
-  const  getProducts = ({page, sortBy}) => {
-     fetchProducts({page, sortBy}).then(response => {
-       const newProducts = [...products, ...response.data];
-      setProducts(newProducts);
-    }).catch(error => {
-      console.log(error);
-    });
-  }
+  
 
   const sort = (e) => {
     setProducts([]);
-    setSortBy(e.target.value);
     setPage(1);
+    setSortBy(e.target.value);
   }
 
   const resetFilters = () => {
@@ -65,7 +62,6 @@ const ProductsPage = () => {
         <InfiniteScroll
           dataLength={products.length} 
           next={() => {
-            getProducts({page: page+1, sortBy});
             setPage((page) => page + 1);
           }}
           hasMore={true}
