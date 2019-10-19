@@ -43,16 +43,15 @@ const ProductsPage = () => {
           <div className="products-page__filters-group">
           <h3 className="products-page__filters-heading">Sort By</h3>
           <label className="control control--radio">Size
-            <input type="radio" name="filter" value="size" id="size" onChange={e => sort(e) } />
+            <input type="radio" name="filter" value="size" id="size" onChange={e => sort(e) } checked={sortBy === 'size'} />
             <div className="control__indicator"></div>
           </label>
            <label className="control control--radio">Price
-            <input type="radio" name="filter" value="size" id="size" onChange={e => sort(e) } checked={sortBy !== ''} />
-            <input type="radio" name="filter" value="price" id="price" onChange={e => sort(e) } checked={sortBy !== ''}  />
+            <input type="radio" name="filter" value="price" id="price" onChange={e => sort(e) } checked={sortBy === 'price'} />
             <div className="control__indicator"></div>
           </label>
            <label className="control control--radio">Id
-            <input type="radio" name="filter" value="id" id="id" onChange={e => sort(e) } checked={sortBy !== ''} />
+            <input type="radio" name="filter" value="id" id="id" onChange={e => sort(e) } checked={sortBy === 'id'} />
             <div className="control__indicator"></div>
           </label>
           { sortBy !== '' ? <button onClick={() => resetFilters()} className="reset">Reset</button> : null }
